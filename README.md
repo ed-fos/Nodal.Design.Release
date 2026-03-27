@@ -1,4 +1,4 @@
-# Nodal Design — Revit Add-in
+# Nodal.Design : Revit Add-in
 
 ITS FREE! 
 
@@ -21,7 +21,7 @@ Creates a kick 90 connection between two perpendicular conduits. Handles both co
 
 ## Download
 
-Go to the **[Releases](https://github.com/ed-fos/Nodal.Design.Releases/releases)** page and download the ZIP for your Revit version:
+Go to the **[Releases](https://github.com/ed-fos/Nodal.Design.Release/releases)** page and download the ZIP for your Revit version:
 
 - **Revit 2024** — `Nodal_v1.0.0_Revit2024.zip`
 - **Revit 2025** — `Nodal_v1.0.0_Revit2025.zip`
