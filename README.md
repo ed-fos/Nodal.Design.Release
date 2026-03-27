@@ -38,7 +38,7 @@ Go to the **[Releases](https://github.com/ed-fos/Nodal.Design.Release/releases)*
    ```
 3. Copy the **`Nodal`** folder to the same location:
    ```
-   C:\ProgramData\Autodesk\Revit\Addins\<Year>\Nodal\
+   C:\ProgramData\Autodesk\Revit\Addins\<Year>\
    ```
 4. Launch Revit. Look for the **Nodal** tab on the ribbon.
 
