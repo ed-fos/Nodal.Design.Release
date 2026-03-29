@@ -1,10 +1,8 @@
-# Nodal.Design : Revit Add-in
+# Nodal.Design - Revit Add-in
 
-ITS FREE! 
+A free Revit add-in for BIM and VDC professionals. Version 1.0.0 ships with two conduit routing tools, with many more on the way.
 
-An aspiring professional Revit add-in for BIM and VDC. Version 1.0.0 only has two tools, but there are many more to come.
-
-**Website:** [nodal.design](https://nodal.design) (not live as yet)
+**Website:** [nodal.design](https://nodal.design) (coming soon)
 **GitHub:** [github.com/ed-fos/Nodal.Design.Release](https://github.com/ed-fos/Nodal.Design.Release)
 
 ---
@@ -31,20 +29,60 @@ Go to the **[Releases](https://github.com/ed-fos/Nodal.Design.Release/releases)*
 
 ## Installation
 
-1. Download and unzip the release for your Revit version.
-2. Copy **`Nodal.addin`** to:
-   ```
-   C:\ProgramData\Autodesk\Revit\Addins\<Year>\
-   ```
-3. Copy the **`Nodal`** folder to the same location:
-   ```
-   C:\ProgramData\Autodesk\Revit\Addins\<Year>\
-   ```
-4. Launch Revit. Look for the **Nodal** tab on the ribbon.
+**IMPORTANT: Do Step 1 before extracting. This prevents Windows from blocking the add-in files.**
 
-> **Note:** `ProgramData` is a hidden folder. Paste the path directly into File Explorer's address bar to navigate there.
+1. **Unblock the ZIP file.** Right-click the downloaded ZIP → **Properties** → check the **"Unblock"** checkbox at the bottom of the General tab → click **OK**. This must be done before extracting.
+
+2. **Extract the ZIP** to a temporary location.
+
+3. **Copy `Nodal.addin`** to:
+   ```
+   C:\ProgramData\Autodesk\Revit\Addins\<Year>\
+   ```
+
+4. **Copy the `Nodal` folder** to the same location:
+   ```
+   C:\ProgramData\Autodesk\Revit\Addins\<Year>\
+   ```
+
+5. **Launch Revit.** Look for the **Nodal** tab on the ribbon.
+
+> **Note:** `ProgramData` is a hidden folder. Paste the path directly into File Explorer's address bar.
 
 To uninstall, delete the `Nodal.addin` file and the `Nodal` folder.
+
+---
+
+## Troubleshooting
+
+### "Revit cannot run the external application" / System.IO.FileLoadException (0x80131515)
+
+This means Windows blocked the DLL files because they were downloaded from the internet. To fix it:
+
+1. **Delete** the `Nodal.addin` file and `Nodal` folder from your Addins directory.
+2. Go back to the downloaded ZIP file in your Downloads folder.
+3. Right-click the ZIP → **Properties** → check **"Unblock"** → **OK**.
+4. Re-extract the ZIP and copy the files again following the installation steps above.
+
+### "Could not load type" / System.TypeLoadException
+
+This means you installed the wrong version. Make sure you download the ZIP that matches your Revit version exactly — the Revit 2025 ZIP will not work in Revit 2024 or 2026.
+
+### Tools don't appear on the ribbon
+
+Make sure the folder structure is correct. The Addins directory should look like this:
+```
+C:\ProgramData\Autodesk\Revit\Addins\2025\
+├── Nodal.addin
+└── Nodal\
+    ├── Nodal.App.dll
+    ├── Nodal.Core.dll
+    ├── Nodal.UI.dll
+    ├── Nodal.Conduit.dll
+    └── assets\
+        └── icons\
+            └── (icon files)
+```
 
 ---
 
@@ -59,6 +97,7 @@ To uninstall, delete the `Nodal.addin` file and the `Nodal` folder.
 ---
 
 ## Tools in Pipeline
+
 - Power Knife
 - Power Connect
 - Power Disconnect
@@ -68,8 +107,10 @@ To uninstall, delete the `Nodal.addin` file and the `Nodal` folder.
 
 ## Author
 
-Edward Foster — [nodal.design](https://nodal.design)
+Edward Foster - [nodal.design](https://nodal.design)
 
 ## License
 
 Copyright © Edward Foster 2026. All rights reserved.
+
+This software is provided as a free download for personal and commercial use with Autodesk Revit. Redistribution of the compiled binaries or any modified versions is not permitted without written consent from the author.
