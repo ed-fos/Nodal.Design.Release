@@ -1,19 +1,56 @@
 # Nodal.Design - Revit Add-in
 
-A free Revit add-in for BIM and VDC professionals. Version 1.0.0 ships with two conduit routing tools, with many more on the way.
-
-**Website:** [nodal.design](https://nodal.design) (coming soon)
-**GitHub:** [github.com/ed-fos/Nodal.Design.Release](https://github.com/ed-fos/Nodal.Design.Release)
+A free Revit add-in suite for BIM and VDC professionals. Version 1.1.0 ships with six tools, with many more on the way.
 
 ---
 
-## Tools
+## What's New in v1.1.0
 
-### Conduit Offset
-Creates a precise offset between two parallel conduits. Select two conduits, choose a bend angle, and the tool automatically calculates the optimal connection point, creates the transition conduit, and places elbow fittings at both ends. Supports pre-selection.
+- Added **Power Tools** panel with four new tools: Power Knife, Power Connect, Power Disconnect, and Parallelize
+- Ribbon now organized into two panels: **Conduits** and **Power Tools**
 
-### Conduit Kick 90
-Creates a kick 90 connection between two perpendicular conduits. Handles both coplanar (direct 90° elbow) and non-coplanar (angled kick) scenarios automatically. Supports pre-selection.
+---
+
+## Panels & Tools
+
+### Conduits
+
+Tools for conduit layout and bending.
+
+#### Conduit Offset
+Generates a parallel offset run from a selected conduit, automatically inserting the appropriate kick bends to connect the two elevations.
+
+#### Conduit Kick 90
+Draws a 90° kicked conduit segment from a selected conduit end, calculating the correct bend geometry based on conduit size and offset distance.
+
+---
+
+### Power Tools
+
+General-purpose tools that work across disciplines — conduit, cable tray, pipe, duct, and more.
+
+#### Power Knife
+Slice or remove sections of Conduits, Cable Trays, Pipes, Ducts, and Lines by dragging a selection rectangle.
+
+- **Fully enclosed** segments are deleted.
+- **Crossing** segments are trimmed to the box boundary.
+- No fittings or couplings are inserted.
+- Works in Plan, RCP, Elevation, Section, and 3D Orthographic views.
+- Detects overlapping elements at different elevations and prompts for resolution.
+
+Open Settings to configure which categories are affected (e.g., exclude Pipes from cuts).
+
+#### Power Connect
+Connects two elements by powering a connection between their open connectors. Works across MEP disciplines wherever Revit connector logic applies.
+
+#### Power Disconnect
+Disconnects two connected elements. The inverse operation of Power Connect — cleanly severs the connector relationship without deleting either element.
+
+#### Parallelize
+Rotates one or more target elements to match the orientation of a reference element, constrained to the active view plane.
+
+- Pre-select two elements to run instantly, or pick interactively.
+- Works across disciplines on any rotatable element.
 
 ---
 
@@ -21,9 +58,9 @@ Creates a kick 90 connection between two perpendicular conduits. Handles both co
 
 Go to the **[Releases](https://github.com/ed-fos/Nodal.Design.Release/releases)** page and download the ZIP for your Revit version:
 
-- **Revit 2024** — `Nodal_v1.0.0_Revit2024.zip`
-- **Revit 2025** — `Nodal_v1.0.0_Revit2025.zip`
-- **Revit 2026** — `Nodal_v1.0.0_Revit2026.zip`
+- **Revit 2024** — `Nodal_v1.1.0_Revit2024.zip`
+- **Revit 2025** — `Nodal_v1.1.0_Revit2025.zip`
+- **Revit 2026** — `Nodal_v1.1.0_Revit2026.zip`
 
 ---
 
@@ -96,18 +133,28 @@ C:\ProgramData\Autodesk\Revit\Addins\2025\
 
 ---
 
+## Feedback & Issues
+
+Found a bug or have a feature request? Open an issue on [GitHub](https://github.com/ed-fos/Nodal.Design.Release/issues) or reach out on LinkedIn.
+
+---
+
 ## Tools in Pipeline
 
-- Power Knife
-- Power Connect
-- Power Disconnect
-- Parallelize
+- Run Selector
+- Run Lookup
+- Renumber Elements
+- Smart Section Box
 
 ---
 
 ## Author
 
 Edward Foster - [nodal.design](https://nodal.design)
+
+**Website:** [nodal.design](https://nodal.design) (coming soon)
+
+**GitHub:** [github.com/ed-fos/Nodal.Design.Release](https://github.com/ed-fos/Nodal.Design.Release)
 
 ## License
 
