@@ -57,11 +57,11 @@ Rotates one or more target elements to match the orientation of a reference elem
 
 Go to the **[Releases](https://github.com/ed-fos/Nodal.Design.Release/releases)** page and download the ZIP for your Revit version:
 
-- **Revit 2022** — `Nodal_v1.1.0_Revit2022.zip`
-- **Revit 2023** — `Nodal_v1.1.0_Revit2023.zip`
-- **Revit 2024** — `Nodal_v1.1.0_Revit2024.zip`
-- **Revit 2025** — `Nodal_v1.1.0_Revit2025.zip`
-- **Revit 2026** — `Nodal_v1.1.0_Revit2026.zip`
+- **Revit 2022** — `Nodal_v1.1.1_Revit2022.zip`
+- **Revit 2023** — `Nodal_v1.1.1_Revit2023.zip`
+- **Revit 2024** — `Nodal_v1.1.1_Revit2024.zip`
+- **Revit 2025** — `Nodal_v1.1.1_Revit2025.zip`
+- **Revit 2026** — `Nodal_v1.1.1_Revit2026.zip`
 
 ---
 
