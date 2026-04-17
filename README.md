@@ -1,13 +1,12 @@
 # Nodal.Design - Revit Add-in
 
-A free Revit add-in suite for BIM and VDC professionals. Version 1.1.0 ships with six tools, with many more on the way.
+A free Revit add-in suite for BIM and VDC professionals. Version 1.1.1 ships with six tools, with many more on the way.
 
 ---
 
-## What's New in v1.1.0
+## What's New in v1.1.1
 
-- Added **Power Tools** panel with four new tools: Power Knife, Power Connect, Power Disconnect, and Parallelize
-- Ribbon now organized into two panels: **Conduits** and **Power Tools**
+- Added support for Revit 2022 and 2023.
 
 ---
 
@@ -58,6 +57,8 @@ Rotates one or more target elements to match the orientation of a reference elem
 
 Go to the **[Releases](https://github.com/ed-fos/Nodal.Design.Release/releases)** page and download the ZIP for your Revit version:
 
+- **Revit 2022** — `Nodal_v1.1.0_Revit2022.zip`
+- **Revit 2023** — `Nodal_v1.1.0_Revit2023.zip`
 - **Revit 2024** — `Nodal_v1.1.0_Revit2024.zip`
 - **Revit 2025** — `Nodal_v1.1.0_Revit2025.zip`
 - **Revit 2026** — `Nodal_v1.1.0_Revit2026.zip`
@@ -127,6 +128,8 @@ C:\ProgramData\Autodesk\Revit\Addins\2025\
 
 | Revit Version | .NET Runtime | Status |
 |--------------|-------------|--------|
+| 2022 | .NET Framework 4.8 | Supported |
+| 2023 | .NET Framework 4.8 | Supported |
 | 2024 | .NET Framework 4.8 | Supported |
 | 2025 | .NET 8 | Supported |
 | 2026 | .NET 8 | Supported |
