@@ -1,12 +1,14 @@
 # Nodal.Design - Revit Add-in
 
-A free Revit add-in suite for BIM and VDC professionals. Version 1.1.1 ships with six tools, with many more on the way.
+A free Revit add-in suite for BIM and VDC professionals. Version 1.1.2 ships with six tools, with many more on the way.
 
 ---
 
-## What's New in v1.1.1
+## What's New in v1.1.2
 
-- Added support for Revit 2022 and 2023.
+- Added support for **Revit 2027**.
+- **Revit 2027 installs to a different folder.** Autodesk moved all-users add-ins from `ProgramData` to `Program Files`, and Revit 2027 ignores `ProgramData` completely — see [Installation](#installation).
+- **Fixed:** the Power Tools buttons (Power Knife, Power Connect, Power Disconnect, Parallelize) did nothing when clicked. A required file was missing from the v1.1.0 and v1.1.1 download packages. If you are on either version, re-download and reinstall.
 
 ---
 
@@ -57,11 +59,12 @@ Rotates one or more target elements to match the orientation of a reference elem
 
 Go to the **[Releases](https://github.com/ed-fos/Nodal.Design.Release/releases)** page and download the ZIP for your Revit version:
 
-- **Revit 2022** — `Nodal_v1.1.1_Revit2022.zip`
-- **Revit 2023** — `Nodal_v1.1.1_Revit2023.zip`
-- **Revit 2024** — `Nodal_v1.1.1_Revit2024.zip`
-- **Revit 2025** — `Nodal_v1.1.1_Revit2025.zip`
-- **Revit 2026** — `Nodal_v1.1.1_Revit2026.zip`
+- **Revit 2022** — `Nodal_v1.1.2_Revit2022.zip`
+- **Revit 2023** — `Nodal_v1.1.2_Revit2023.zip`
+- **Revit 2024** — `Nodal_v1.1.2_Revit2024.zip`
+- **Revit 2025** — `Nodal_v1.1.2_Revit2025.zip`
+- **Revit 2026** — `Nodal_v1.1.2_Revit2026.zip`
+- **Revit 2027** — `Nodal_v1.1.2_Revit2027.zip`
 
 ---
 
@@ -73,19 +76,26 @@ Go to the **[Releases](https://github.com/ed-fos/Nodal.Design.Release/releases)*
 
 2. **Extract the ZIP** to a temporary location.
 
-3. **Copy `Nodal.addin`** to:
-   ```
-   C:\ProgramData\Autodesk\Revit\Addins\<Year>\
-   ```
+3. **Copy `Nodal.addin` and the `Nodal` folder** into the Addins directory for your Revit version. **The directory moved in Revit 2027**, so use the row that matches:
 
-4. **Copy the `Nodal` folder** to the same location:
-   ```
-   C:\ProgramData\Autodesk\Revit\Addins\<Year>\
-   ```
+   | Revit Version | Addins Directory |
+   |--------------|------------------|
+   | 2022–2026 | `C:\ProgramData\Autodesk\Revit\Addins\<Year>\` |
+   | 2027 and later | `C:\Program Files\Autodesk\Revit\Addins\<Year>\` |
 
-5. **Launch Revit.** Look for the **Nodal** tab on the ribbon.
+   Both files go in the same folder — `Nodal.addin` sits next to the `Nodal` folder, not inside it.
 
-> **Note:** `ProgramData` is a hidden folder. Paste the path directly into File Explorer's address bar.
+4. **Launch Revit.** Look for the **Nodal** tab on the ribbon.
+
+> **Note for Revit 2022–2026:** `ProgramData` is a hidden folder. Paste the path directly into File Explorer's address bar.
+
+> **Note for Revit 2027 and later:** Writing to `Program Files` needs administrator rights. If you don't have them, install for your user only instead — everything works the same:
+> ```
+> %AppData%\Autodesk\Revit\Addins\2027\
+> ```
+> Revit 2027 **ignores** `C:\ProgramData` entirely, so installing there will silently do nothing.
+>
+> Use the shared `Revit\Addins` folder shown above — **not** `C:\Program Files\Autodesk\Revit 2027\`, which is reserved for Autodesk's own add-ins.
 
 To uninstall, delete the `Nodal.addin` file and the `Nodal` folder.
 
@@ -108,19 +118,26 @@ This means you installed the wrong version. Make sure you download the ZIP that 
 
 ### Tools don't appear on the ribbon
 
-Make sure the folder structure is correct. The Addins directory should look like this:
+First, check you are using the right Addins directory for your Revit version — see [Installation](#installation). **Revit 2027 does not read `C:\ProgramData`**; if you installed there, Revit starts normally and simply never loads the add-in.
+
+Then make sure the folder structure is correct:
 ```
-C:\ProgramData\Autodesk\Revit\Addins\2025\
+<Addins directory for your Revit version>\
 ├── Nodal.addin
 └── Nodal\
     ├── Nodal.App.dll
     ├── Nodal.Core.dll
     ├── Nodal.UI.dll
     ├── Nodal.Conduit.dll
+    ├── Nodal.MEP.dll
     └── assets\
         └── icons\
             └── (icon files)
 ```
+
+### Power Tools buttons do nothing
+
+`Nodal.MEP.dll` is missing from the `Nodal` folder. That assembly backs Power Knife, Power Connect, Power Disconnect, and Parallelize. Re-extract the ZIP and copy the whole `Nodal` folder across.
 
 ---
 
@@ -133,6 +150,7 @@ C:\ProgramData\Autodesk\Revit\Addins\2025\
 | 2024 | .NET Framework 4.8 | Supported |
 | 2025 | .NET 8 | Supported |
 | 2026 | .NET 8 | Supported |
+| 2027 | .NET 10 | Supported |
 
 ---
 
