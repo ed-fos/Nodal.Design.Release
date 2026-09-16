@@ -8,7 +8,6 @@ A free Revit add-in suite for BIM and VDC professionals. Version 1.1.2 ships wit
 
 - Added support for **Revit 2027**.
 - **Revit 2027 installs to a different folder.** Autodesk moved all-users add-ins from `ProgramData` to `Program Files`, and Revit 2027 ignores `ProgramData` completely — see [Installation](#installation).
-- **Fixed:** the Power Tools buttons (Power Knife, Power Connect, Power Disconnect, Parallelize) did nothing when clicked. A required file was missing from the v1.1.0 and v1.1.1 download packages. If you are on either version, re-download and reinstall.
 
 ---
 
@@ -134,10 +133,6 @@ Then make sure the folder structure is correct:
         └── icons\
             └── (icon files)
 ```
-
-### Power Tools buttons do nothing
-
-`Nodal.MEP.dll` is missing from the `Nodal` folder. That assembly backs Power Knife, Power Connect, Power Disconnect, and Parallelize. Re-extract the ZIP and copy the whole `Nodal` folder across.
 
 ---
 
